@@ -3,6 +3,8 @@
 // Programmer: Sohail Zafar
 // This file set up the back end server for the projects. It uses node.js. packages to do a web scrapping of the the 
 // New York Times world section of the website and saves articles to a mongo data base.  
+// The homework is incomplete. Only the home route and scraping route work. I have to add the notes part to the project.
+// Thank you.
 
 var express = require("express");
 var logger = require("morgan");
@@ -69,6 +71,7 @@ app.get("/scrape", function(req, res) {
         .children("a")
         .attr("summary");
       // Create a new Article using the `result` object built from scraping
+      db.Articles.remove();
       db.Articles.create(result)
         .then(function(dbArticle) {
           // View the added result in the console
@@ -90,7 +93,7 @@ app.get("/scrape", function(req, res) {
     db.Articles.find({})
     .then(function(dbArticle) {
       // If we were able to successfully find Articles, send them back to the client
-      res.render("articles", { art: dbArticle });
+      res.render("index", { art: dbArticle });
     })
     .catch(function(err) {
       // If an error occurred, send it to the client

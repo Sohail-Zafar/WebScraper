@@ -1,0 +1,10 @@
+
+{{!-- Assignment: All the news that is worth to scrape. --}}
+{{!-- File: index.handlebars --}}
+{{!-- Programmer: Sohail Zafar --}}
+
+ {{#each art}}
+  			<p>Title: {{this.title}}</p>
+			<p>Link:  <a href="{{this.link}}">{{this.link}}</a></p>
+ 		 <hr>
+{{/each}}
