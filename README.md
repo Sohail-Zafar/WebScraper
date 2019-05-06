@@ -4,6 +4,7 @@
 <p><h4>This projects goal is to scrape the NY Times World section website.</h4></p>
 <p>The project uses the following npm packages:
 <br>
+<a href="https://dashboard.heroku.com/apps/floating-beyond-51825">Heroku link</a>
 <ul>
     <li>axios</li>
     <li>cheerio</li>
